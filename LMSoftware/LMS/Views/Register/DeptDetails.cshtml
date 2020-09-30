@@ -1,0 +1,49 @@
+﻿@using LMS.Models
+@model List<TestDepartment>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TestRegister</h4>
+    <hr />
+
+    <div class="container marginTop">
+        <div class="row">
+            @*<div class="text-center view overlay hm-white-slight">
+                    <img src="@Model.ImageUrl" class="img-fluid" alt="" />
+                    <a href="#">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>*@
+            <div class="glyphicon-credit-card">
+
+                <div class="card-block">
+                    @foreach (var item in Model) {
+
+                    <h4 class="card-title py-2"> @item.Department</h4>
+                    <ul>
+                        <li> <p class="card-text py-2"><span> <b>Test: </b></span> </p>@item.Tests.TestName  </li>
+
+                        @*<li> <p class="card-text py-2"><span> <b>Physician: </b></span> @Model.Patient.Physician.PhysicianName</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Clinical diagnosis: </b></span> @Model.Patient.ClinicalDiagnosis</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Department: </b></span> @Model.Patient.Department</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Date of request: </b></span> @Model.Patient.DateOfRequest</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Lab Number: </b></span> @Model.Patient.ClinicNo</p> </li>*@
+                    </ul>
+                    }
+                    <p class="btn btn-group pull-right">
+                        <a asp-controller="Home" asp-action="Department" class="btn btn-default">Show all Departments</a>
+                        <a class="btn btn-success" id="cartButton" asp-controller="Register" asp-action="EditDept">Edit details</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

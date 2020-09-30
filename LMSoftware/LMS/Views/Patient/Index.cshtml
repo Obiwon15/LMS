@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "List Of Patients";
+}
+@using LMS.Models
+@model IEnumerable<PatientForm>
+
+
+
+<h2>Patients</h2>
+<p>
+    @Html.ActionLink("New Patient", "Create", "Patient", new { Path = "Id" }, new { @class = "btn btn-primary" })
+</p>
+
+<h4>Here are the list of clients registered in this clinic.</h4>
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Patient Fullname</th>
+            <th>Age</th>
+            <th>Physician</th>
+            <th>Clinical Diagnosis</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+                 @foreach (var person in Model)
+                  {
+                    <tr>
+                        <td ><a asp-controller="Patient" asp-action="Details" asp-route-Id="@person.Id">@person.Fullname</a></td>
+                        <td >@person.Age</td>
+                        <td>@person.Physician.PhysicianName</td>
+                        <td >@person.ClinicalDiagnosis</td>
+
+                        <td ><a asp-controller="Patient" asp-action="Edit" asp-route-Id="@person.Id">Edit</a></td>
+                        <td ><a asp-action="Remove" asp-route-Id="@person.Id">Delete</a></td>
+
+                    </tr>
+                  }
+        </tbody>
+    </table>
+
+
+

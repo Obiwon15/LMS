@@ -1,0 +1,147 @@
+﻿
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@model LMS.ViewModels.AppDeptViewModel
+
+<h1>Edit</h1>
+
+
+
+
+
+<div class="row" style="padding-bottom:50px">
+    @*<h3 class="text-center">Laboratory Request Form</h3>*@
+    <div class="col-md-4">
+        <div asp-validation-summary="All"></div>
+        <form asp-controller="Register" asp-action="EditApp" method="post" class="form-horizontal" role="form">
+
+            <fieldset class="text-left">
+                <legend>Edit your appointment</legend>
+                <hr />
+                <!--<div class="form-group">
+        <label asp-for="Fullname" class="col-md-8 control-label">Fullname:</label>
+        <div class="col-md-8">
+            <input asp-for="Fullname" class="form-control" list="micro" />-->
+                @*<datalist asp-for="Microbiology" id="micro">
+            <option>Urinalysis</option>
+            <option>Cocaine</option>
+        </datalist>*@
+                <!--<span asp-validation-for="Fullname" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age" class="col-md-8 control-label">Age:</label>
+        <div class="col-md-8">
+            <input asp-for="Age" class="form-control" list="haemat" />-->
+                @*<datalist asp-for="Haematology" id="haemat">
+            <option>PCV</option>
+            <option>Cocaine</option>
+        </datalist>*@
+                <!--<span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+    </div>-->
+                <div class="form-group">
+                    <label asp-for="Date" class="col-md-8 control-label">Date of Request:</label>
+                    <div class="col-md-8">
+                        <input asp-for="Date" class="form-control" list="ha" />
+                        @*<datalist asp-for="HormonalAssay" id="ha">
+                    <option>PSA</option>
+                    <option>Cocaine</option>
+                </datalist>*@
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+                </div>
+                <!--<div class="form-group">
+        <label asp-for="ClinicalDiagnosis" class="col-md-8 control-label">Clinical Diagnosis:</label>
+        <div class="col-md-8">
+            <input asp-for="ClinicalDiagnosis" class="form-control" list="drugs" />-->
+                @*<datalist asp-for="drugs" id="drugs">
+            <option>THC</option>
+            <option>Cocaine</option>
+            <option>Amphetamine</option>
+            <option>Opiates</option>
+            <option>Barbiturates</option>
+            <option>Alcohol Testing </option>
+        </datalist>*@
+                <!--<span asp-validation-for="ClinicalDiagnosis" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="TestName" class="col-md-8 control-label">Test Required:</label>
+        <div class="col-md-8">
+            <input asp-for="TestName" class="form-control" type="text" list="Misc" />-->
+                @*<datalist asp-for="Miscellaneous" id="Misc">
+            <option>DNA Paternity Test</option>
+            <option>Ante-natal screening</option>
+            <option>GIPD</option>
+            <option>LE cells</option>
+        </datalist>*@
+
+                <!--<span asp-validation-for="TestName" class="text-danger"></span>
+        </div>
+    </div>-->
+                @*<div class="form-group">
+            <label asp-for="Physician" class="col-md-8 control-label">Physician:</label>
+            <div class="col-md-8">
+                <input asp-for="Physician" class="form-control" />
+
+                <span asp-validation-for="Physician" class="text-danger"></span>
+            </div>
+        </div>*@
+                @*<div class="form-group">
+            <label asp-for="Department" class="col-md-8 control-label">Department:</label>
+            <div class="col-md-8">
+                <input asp-for="Department" class="form-control" />
+
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+        </div>*@
+
+                <div class="form-group">
+                    <label asp-for="PatientId" class="col-md-8 control-label">Patient:</label>
+                    <div class="col-md-8">
+                        <input asp-for="PatientId" class="form-control" />
+                        @*<select asp-for="PatientId" class="form-control" asp-items="@(new SelectList(Model.patL.ToString(), "Value", "Test"))">
+                </select>*@
+
+                        <span asp-validation-for="PatientId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <label asp-for="TestId" class="col-md-8 control-label">Test Required: </label>
+                        <input asp-for="TestId" class="form-control" />
+
+                        @*<select asp-for="TestId" class="form-control" asp-items="@(new SelectList(Model.TestL, "Value", "Text"))">
+                </select>*@
+                        <span asp-validation-for="TestId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+
+                    <div class="btn-group col-md-offset-2 col-md-4">
+                        <input type="submit" value="Submit Form" class="btn btn-success" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

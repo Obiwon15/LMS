@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Detais";
+}
+@using LMS.Models
+@model PatientForm
+
+<div class="container marginTop">
+    <div class="row">
+        @*<div class="text-center view overlay hm-white-slight">
+            <img src="@Model.ImageUrl" class="img-fluid" alt="" />
+            <a href="#">
+                <div class="mask waves-effect waves-light"></div>
+            </a>
+        </div>*@
+        <div class="glyphicon-credit-card">
+
+            <div class="card-block">
+                    <h4 class="card-title py-2">@Model.Fullname</h4>
+                    <ul>
+                        <li> <p class="card-text py-2"><span> <b>Age: </b></span> @Model.Age</p> </li>
+                        
+                        <li> <p class="card-text py-2"><span> <b>Physician: </b></span> @Model.Physician.PhysicianName</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Clinical diagnosis: </b></span> @Model.ClinicalDiagnosis</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Department: </b></span> @Model.Department</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Date of request: </b></span> @Model.DateOfRequest</p> </li>
+                        <li> <p class="card-text py-2"><span> <b>Lab Number: </b></span> @Model.ClinicNo</p> </li>
+                    </ul>
+                
+
+                <p class="btn btn-group pull-right">
+                    <a asp-controller="Patient" asp-action="Index" class="btn btn-default">Show all Patients</a>
+                    <a class="btn btn-success" id="cartButton" asp-controller="Patient" asp-action="Edit" asp-route-Id="@Model.Id">Edit details</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

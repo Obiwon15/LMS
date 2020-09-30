@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LMS.Models.TestDepartment>
+
+@{
+    ViewData["Title"] = "Department";
+}
+
+<h2>Department</h2>
+
+<p>
+    <a asp-controller="Register" asp-action="CreateDept">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+                    @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-controller="Register" asp-action="DeptDetails" asp-route-id="@item.DeptId">
+                    @Html.DisplayFor(modelItem => item.Department)
+                    </a>
+            </td>
+            <td>
+                <a asp-controller="Register" asp-action="EditDept" asp-route-id="@item.DeptId">Edit</a> 
+                @*<a asp-action="Details" asp-route-id="@item.DeptId">Details</a> |*@
+               
+            </td>
+            <td> <a asp-controller="Register" asp-action="RemoveDept" asp-route-id="@item.DeptId">Delete</a></td>
+        </tr>
+}
+    </tbody>
+</table>

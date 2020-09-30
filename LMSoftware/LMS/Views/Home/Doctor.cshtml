@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LMS.Models.Physician>
+
+@{
+    ViewData["Title"] = "Doctor";
+}
+
+<h1>Doctors</h1>
+
+<p>
+    <a asp-controller="Test" asp-action="CreateDoc">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Physician
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhysicianName)
+            </td>
+            <td>
+                <a asp-controller="Test" asp-action="EditDoc" asp-route-id="@item.Id">Edit</a>
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+               
+            </td>
+            <td> <a asp-controller="Test" asp-action="RemoveDoc" asp-route-id="@item.Id">Delete</a></td>
+        </tr>
+}
+    </tbody>
+</table>

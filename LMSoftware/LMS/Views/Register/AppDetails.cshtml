@@ -1,0 +1,42 @@
+﻿@model LMS.Models.TestRegister
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>Appointments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Result)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Result.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditApp" asp-route-patientid="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

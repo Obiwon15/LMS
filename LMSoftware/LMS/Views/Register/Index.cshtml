@@ -1,0 +1,54 @@
+﻿@model IEnumerable<LMS.Models.TestRegister>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Appointments</h1>
+
+
+<p>
+    @Html.ActionLink("Book Appointment", "CreateApp", "Register", new { Path = "Id" }, new { @class = "btn btn-primary" })
+</p>
+<h4>
+    <a asp-controller="Patient" asp-action="Index">List of registered patients</a>
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appointment Id</th>
+            <th>Date of Request</th>
+            <th>Fullname of patient</th>
+            <th>Age</th>
+            <th>Clinical Diagnosis</th>
+            <th>Physician</th>
+            @*<th>Test taken</th>
+            <th>Department</th>*@
+            <th>Result</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td><a asp-action="AppDetails" asp-route-id="@item.Id" >@item.Id</a></td>
+            <td>@item.Patient.DateOfRequest</td>
+            <td>@item.Patient.Fullname</td>
+            <td>@item.Patient.Age</td>
+            <td>@item.Patient.ClinicalDiagnosis</td>
+            <td>@item.Patient.Physician.PhysicianName</td>
+            @*<td>@item.Patient.Test.TestName</td>
+            <td>@item.Patient.Test.Department.Department</td>*@
+            <td>@item.Result.IsCompleted</td>
+            <td>
+                <a asp-action="EditApp" asp-route-patientId="@item.Id">Edit</a>
+                </td>
+             <td>
+                <a asp-action="RemoveApp" asp-route-Id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -293,10 +293,7 @@ namespace LMS.Controllers
             }
             else
             {
-                var pat = _repo.GetPatient(id);
-                var app = _testRepo.GetAppointment(id);
-                var phy = _repo.GetPhysician(id);
-                var test = _testRepo.GetTest(id);
+               
                 var dept = _testRepo.GetDepartment(id);
 
                 var res = new AppDeptViewModel

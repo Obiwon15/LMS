@@ -40,15 +40,15 @@ namespace LMS.Data.Repositories
         public TestRegister GetAppointment(int Id)
         {
             return _appDbContext.Appointments
-                .Include(p => p.Patient).ThenInclude(b => b.Physician)
+                .Include(p => p.Patient).ThenInclude(b => b.Test).ThenInclude(z => z.Department)
                 .Include(x => x.Result)
-                .Include(z =>z.Test).ThenInclude(tb => tb.Department).FirstOrDefault(a => a.Id == Id);
+                .Include(z =>z.Patient).ThenInclude(tb => tb.Physician).FirstOrDefault(a => a.Id == Id);
         }
 
         public List<TestRegister> GetAppointments()
         {
-            return _appDbContext.Appointments.Include(s => s.Patient).ThenInclude(b => b.Physician)
-                .Include(x => x.Result).Include(z => z.Test).ThenInclude(tb => tb.Department)
+            return _appDbContext.Appointments.Include(s => s.Patient).ThenInclude(b => b.Test).ThenInclude(v => v.Department)
+                .Include(x => x.Result).Include(z => z.Patient).ThenInclude(tb => tb.Physician)
                 .ToList();
         }
 
@@ -81,7 +81,7 @@ namespace LMS.Data.Repositories
         //}
         public PatientTest GetTest(int Id)
         {
-            return _appDbContext.Tests.Include(p => p.Department).FirstOrDefault(p => p.TestId == Id);
+            return _appDbContext.Tests.Include(p => p.Department).Include(x => x.patients).FirstOrDefault(p => p.TestId == Id);
         }
 
 

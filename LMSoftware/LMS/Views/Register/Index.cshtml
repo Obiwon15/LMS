@@ -22,8 +22,8 @@
             <th>Age</th>
             <th>Clinical Diagnosis</th>
             <th>Physician</th>
-            @*<th>Test taken</th>
-            <th>Department</th>*@
+            <th>Test taken</th>
+            <th>Department</th>
             <th>Result</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -39,8 +39,8 @@
             <td>@item.Patient.Age</td>
             <td>@item.Patient.ClinicalDiagnosis</td>
             <td>@item.Patient.Physician.PhysicianName</td>
-            @*<td>@item.Patient.Test.TestName</td>
-            <td>@item.Patient.Test.Department.Department</td>*@
+            <td>@item.Patient.Test.TestName</td>
+            <td>@item.Patient.Test.Department.Department</td>
             <td>@item.Result.IsCompleted</td>
             <td>
                 <a asp-action="EditApp" asp-route-patientId="@item.Id">Edit</a>

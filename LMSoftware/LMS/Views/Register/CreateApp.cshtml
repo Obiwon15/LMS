@@ -103,14 +103,14 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     <div class="col-md-8">
                         <label asp-for="TestId" class="col-md-8 control-label">Test Required: </label>
                         <select asp-for="TestId" class="form-control" asp-items="@(new SelectList(Model.TestL, "Value", "Text"))">
                         </select>
                         <span asp-validation-for="TestId" class="text-danger"></span>
                     </div>
-                </div>
+                </div>*@
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
 

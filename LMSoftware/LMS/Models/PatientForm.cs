@@ -21,8 +21,8 @@ namespace LMS.Models
         public int PhysicianId { get; set; }
         public int testId { get; set; }
         //public virtual TestDepartment Departments { get; set; }
-        //////public int TestId { get; set; } = 0;
-        //////public int PhysicianId { get; set; } = 0;
+        //public int TestId { get; set; } = 0;
+        //public int PhysicianId { get; set; } = 0;
         public virtual PatientTest Test { get; set; }
         public virtual Physician Physician { get; set; }
 

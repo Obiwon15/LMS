@@ -28,7 +28,7 @@ namespace LMS.Data.Repositories
 
         public List<PatientForm> GetAllPatients()
         {
-            return _ctx.Patients.Include(p => p.Physician).ToList();
+            return _ctx.Patients.Include(p => p.Physician).Include(s => s.Test).ToList();
         }
 
         public List<Physician> GetAllPhysicians()
@@ -46,7 +46,7 @@ namespace LMS.Data.Repositories
 
         public PatientForm GetPatient(int Id)
         {
-            return _ctx.Patients.Include(p => p.Physician).FirstOrDefault(s => s.Id == Id);
+            return _ctx.Patients.Include(p => p.Physician).Include(s => s.Test).FirstOrDefault(s => s.Id == Id);
         }
         public PatientTest GetPatientTest(int TestId)
         {

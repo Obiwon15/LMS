@@ -11,20 +11,20 @@ namespace LMS.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Fullname { get; set; }
-        public string ClinicalDiagnosis { get; set; }
+        public string Fullname { get; set; } = "";
+        public string ClinicalDiagnosis { get; set; } = "";
         public DateTime DateOfRequest { get; set; }
-        public int ClinicNo { get; set; } 
-        public int Age { get; set; }
-        public string Department { get; set; }
-        public int DepartmentId { get; set; }
+        public int ClinicNo { get; set; } = 0;
+        public int Age { get; set; } = 0;
+        //public string Department { get; set; } = "";
+        public int DepartmentId { get; set; } 
         public int PhysicianId { get; set; }
         public int testId { get; set; }
         //public virtual TestDepartment Departments { get; set; }
         //public int TestId { get; set; } = 0;
         //public int PhysicianId { get; set; } = 0;
-        public virtual PatientTest Test { get; set; }
-        public virtual Physician Physician { get; set; }
+        public virtual PatientTest Test { get; set; } = new PatientTest { };
+        public virtual Physician Physician { get; set; } = new Physician { };
 
 
     }

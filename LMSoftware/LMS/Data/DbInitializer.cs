@@ -53,7 +53,9 @@ namespace LMS.Data
                     //}
                     //PhysicianId = 2,
                     //Test = 5,
-                    Department = "Infection and Disease"
+
+
+                    //Department = "Infection and Disease"
                 };
                 context.Patients.Add(pat);
 

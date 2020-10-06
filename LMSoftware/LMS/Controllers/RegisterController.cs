@@ -39,7 +39,6 @@ namespace LMS.Controllers
 
             //};
            
-
             return View(res);
         }
 

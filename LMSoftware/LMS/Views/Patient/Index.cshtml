@@ -20,8 +20,8 @@
         <tr>
             <th>Patient Fullname</th>
             <th>Age</th>
-            @*<th>Physician</th>
-            <th>Clinical Diagnosis</th>*@
+            <th>Physician</th>
+            <th>Clinical Diagnosis</th>
             <th>Test taken</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -34,8 +34,8 @@
         <tr>
             <td><a asp-controller="Patient" asp-action="Details" asp-route-Id="@person.Id">@person.Fullname</a></td>
             <td>@person.Age</td>
-            @*<td>@person.Physician.PhysicianName</td>
-        <td >@person.ClinicalDiagnosis</td>*@
+            <td>@person.Physician.PhysicianName</td>
+        <td >@person.ClinicalDiagnosis</td>
             <td>@person.Test.TestName</td>
             <td><a asp-controller="Patient" asp-action="Edit" asp-route-Id="@person.Id">Edit</a></td>
             <td><a asp-action="Remove" asp-route-Id="@person.Id">Delete</a></td>

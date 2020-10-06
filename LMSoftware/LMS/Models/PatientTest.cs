@@ -10,9 +10,9 @@ namespace LMS.Models
     {
         [Key]
         public int TestId { get; set; }
-        public string TestName { get; set; }
+        public string TestName { get; set; } = "";
         public int DepartmentId { get; set; }
-        public virtual TestDepartment Department { get; set; }
-        public virtual PatientForm patients { get; set; }
+        public virtual TestDepartment Department { get; set; } = new TestDepartment { };
+        public virtual PatientForm patients { get; set; } = new PatientForm { };
     }
 }

@@ -10,8 +10,8 @@ namespace LMS.Models
     {
         [Key]
         public int Id { get; set; }
-        public string PhysicianName { get; set; }
-        public PatientForm Patients { get; set; }
+        public string PhysicianName { get; set; } = "";
+        public PatientForm Patients { get; set; } = new PatientForm { };
 
     }
 }

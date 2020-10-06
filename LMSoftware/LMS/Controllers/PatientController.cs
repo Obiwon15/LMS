@@ -80,7 +80,7 @@ namespace MedLaboratorySystem.Controllers
             var pvm = new PatientForm
             {
                 Fullname = vm.Fullname,
-                Department = vm.Department,
+                //Department = vm.Department,
                 Age = vm.Age,
               
                 ClinicalDiagnosis = vm.ClinicalDiagnosis,
@@ -141,7 +141,7 @@ namespace MedLaboratorySystem.Controllers
                     Id = patient.Id,
                     Fullname = patient.Fullname,
                     Age = patient.Age,
-                    Department = patient.Department,
+                    //Department = patient.Department,
                     TestId = patient.DepartmentId,
                     
                    //docL = docList,
@@ -168,7 +168,7 @@ namespace MedLaboratorySystem.Controllers
                 Fullname = vm.Fullname,
                
                 Age = vm.Age,
-                Department = vm.Department,
+                //Department = vm.Department,
                 ClinicalDiagnosis = vm.ClinicalDiagnosis,
                 ClinicNo = vm.ClinicNo,
                 DateOfRequest = vm.DateOfRequest,

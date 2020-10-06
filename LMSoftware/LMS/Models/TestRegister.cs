@@ -16,11 +16,11 @@ namespace LMS.Models
         //public int ClinicNo { get; set; }
         //public int Age { get; set; }
         //public string Department { get; set; }
-        public virtual PatientForm Patient { get; set; }
+        public virtual PatientForm Patient { get; set; } 
         //public virtual Physician physician { get; set; }
         public int TId { get; set; }
-        public virtual PatientTest Test { get; set; }
+        public virtual PatientTest Test { get; set; } = new PatientTest { };
         public int ResultId { get; set; }
-        public virtual TestResult Result { get; set; }
+        public virtual TestResult Result { get; set; } = new TestResult { };
     }
 }

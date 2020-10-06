@@ -16,7 +16,7 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Test Id</th>
+            <th>Details</th>
             <th>Test Name</th>
             <th>Department</th>
             <th>Edit</th>
@@ -28,7 +28,7 @@
         @foreach (var test in Model)
         {
         <tr>
-            <td><a asp-controller="Test" asp-action="TestDetails" asp-route-Id="@test.TestId">@test.TestId</a></td>
+            <td><a asp-controller="Test" asp-action="TestDetails" asp-route-Id="@test.TestId">Details</a></td>
             <td>@test.TestName</td>
             <td>@test.Department.Department</td>
          

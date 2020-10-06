@@ -10,8 +10,8 @@ namespace LMS.Models
     {
         [Key]
         public int DeptId { get; set; }
-        public string Department { get; set; }
-        public virtual PatientTest Tests { get; set; }
+        public string Department { get; set; } = "";
+        public virtual PatientTest Tests { get; set; } = new PatientTest { };
         //public int TestId { get; set; }
         //public ICollection<PatientTest> Tests { get; set; }
 
